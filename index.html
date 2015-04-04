@@ -7,24 +7,19 @@
     <title>Unit Converter</title>
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/bootstrap-theme.css">
-    <style>
-        .row {
-            padding-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
+            <span class="glyphicons glyphicons-glass"></span>
             <h1>Conversion</h1>
         </div>
     </div>
 
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2">
-            <select class="form-control">
-                <option value="something">Something</option>
-                <option value="second">Second</option>
+            <select id="converter-selector" class="form-control">
             </select>
         </div>
     </div>
@@ -53,7 +48,6 @@
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script type="javascript" src="js/bootstrap.js"></script>
+    <script data-main="js/main" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.17/require.js"></script>
 </body>
 </html>
