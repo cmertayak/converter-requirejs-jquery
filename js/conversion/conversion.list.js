@@ -1,7 +1,9 @@
 define([
     'conversion-widgets/type.length',
-], function(typeLength) {
+    'conversion-widgets/type.mass',
+], function(typeLength, typeMass) {
     return [
         typeLength,
+        typeMass,
     ];
 });

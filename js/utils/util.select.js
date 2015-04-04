@@ -13,6 +13,13 @@ define(['jquery'], function($){
         init: function($el, changeCallbackFn) {
             this._$el = $el;
             changeCallbackFn && this._$el.on('change', changeCallbackFn);
+
+            return {
+                _$el: this._$el,
+                addItem: this.addItem,
+                val: this.val,
+                removeAllItems: this.removeAllItems
+            };
         },
 
         /**
@@ -26,6 +33,10 @@ define(['jquery'], function($){
                 value: value,
                 text: text
             }).appendTo(this._$el);
+        },
+
+        val: function() {
+            return this._$el.val();
         },
 
         /**
