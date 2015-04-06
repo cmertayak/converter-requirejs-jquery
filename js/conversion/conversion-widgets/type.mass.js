@@ -2,9 +2,6 @@ define(function() {
     'use strict';
     return {
         name: "Mass",
-        defaultDisplayUnit: 1,
-
-        defaultUnitId: 1,
 
         units: [
             {

@@ -2,9 +2,6 @@ define(function() {
     'use strict';
     return {
         name: "Length",
-        defaultDisplayUnit: 1,
-
-        defaultUnitId: 1,
 
         units: [
             {
