@@ -5,12 +5,12 @@ define(['jquery'], function($){
         _$el: null,
 
         /**
-         * Initializing the select DOM element
+         * Wrap the select DOM element
          *
          * @param $el
          * @param changeCallbackFn
          */
-        init: function($el, changeCallbackFn) {
+        create: function($el, changeCallbackFn) {
             this._$el = $el;
             changeCallbackFn && this._$el.on('change', changeCallbackFn);
 
@@ -18,7 +18,8 @@ define(['jquery'], function($){
                 _$el: this._$el,
                 addItem: this.addItem,
                 val: this.val,
-                removeAllItems: this.removeAllItems
+                removeAllItems: this.removeAllItems,
+                setByIndex: this.setByIndex
             };
         },
 
@@ -37,6 +38,10 @@ define(['jquery'], function($){
 
         val: function() {
             return this._$el.val();
+        },
+
+        setByIndex: function(index) {
+            $('option:eq(' + index + ')', this._$el).prop('selected', true);
         },
 
         /**

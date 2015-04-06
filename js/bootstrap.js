@@ -1274,7 +1274,7 @@ if (typeof jQuery === 'undefined') {
   Tooltip.DEFAULTS = {
     animation: true,
     placement: 'top',
-    selector: false,
+    concept: false,
     template: '<div class="tooltip" role="tooltip"><div class="tooltip-arrow"></div><div class="tooltip-inner"></div></div>',
     trigger: 'hover focus',
     title: '',
@@ -1282,7 +1282,7 @@ if (typeof jQuery === 'undefined') {
     html: false,
     container: false,
     viewport: {
-      selector: 'body',
+      concept: 'body',
       padding: 0
     }
   }
@@ -1292,10 +1292,10 @@ if (typeof jQuery === 'undefined') {
     this.type      = type
     this.$element  = $(element)
     this.options   = this.getOptions(options)
-    this.$viewport = this.options.viewport && $(this.options.viewport.selector || this.options.viewport)
+    this.$viewport = this.options.viewport && $(this.options.viewport.concept || this.options.viewport)
 
-    if (this.$element[0] instanceof document.constructor && !this.options.selector) {
-      throw new Error('`selector` option must be specified when initializing ' + this.type + ' on the window.document object!')
+    if (this.$element[0] instanceof document.constructor && !this.options.concept) {
+      throw new Error('`concept` option must be specified when initializing ' + this.type + ' on the window.document object!')
     }
 
     var triggers = this.options.trigger.split(' ')
@@ -1304,18 +1304,18 @@ if (typeof jQuery === 'undefined') {
       var trigger = triggers[i]
 
       if (trigger == 'click') {
-        this.$element.on('click.' + this.type, this.options.selector, $.proxy(this.toggle, this))
+        this.$element.on('click.' + this.type, this.options.concept, $.proxy(this.toggle, this))
       } else if (trigger != 'manual') {
         var eventIn  = trigger == 'hover' ? 'mouseenter' : 'focusin'
         var eventOut = trigger == 'hover' ? 'mouseleave' : 'focusout'
 
-        this.$element.on(eventIn  + '.' + this.type, this.options.selector, $.proxy(this.enter, this))
-        this.$element.on(eventOut + '.' + this.type, this.options.selector, $.proxy(this.leave, this))
+        this.$element.on(eventIn  + '.' + this.type, this.options.concept, $.proxy(this.enter, this))
+        this.$element.on(eventOut + '.' + this.type, this.options.concept, $.proxy(this.leave, this))
       }
     }
 
-    this.options.selector ?
-      (this._options = $.extend({}, this.options, { trigger: 'manual', selector: '' })) :
+    this.options.concept ?
+      (this._options = $.extend({}, this.options, { trigger: 'manual', concept: '' })) :
       this.fixTitle()
   }
 
@@ -1771,7 +1771,7 @@ if (typeof jQuery === 'undefined') {
 
     $tip.removeClass('fade top bottom left right in')
 
-    // IE8 doesn't accept hiding via the `:empty` pseudo selector, we have to do
+    // IE8 doesn't accept hiding via the `:empty` pseudo concept, we have to do
     // this manually by checking the contents.
     if (!$tip.find('.popover-title').html()) $tip.find('.popover-title').hide()
   }
