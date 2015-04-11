@@ -1,3 +1,8 @@
+/**
+ * DOM handling
+ *
+ * @todo How to make this unit better?
+ */
 require(['conversion.fn', 'conversion.list', "util.select", "jquery"],
     function(conversionFn, conversionList, selectWrapper, $){
         'use strict';
