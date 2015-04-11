@@ -21,6 +21,7 @@ require(['conversion.fn', 'conversion.list', "util.select", "jquery"],
             selectors.unit1,
             function() {
                 fromValue2ToValue1();
+                selectors.value1.focus();
             }
         );
 
@@ -28,6 +29,7 @@ require(['conversion.fn', 'conversion.list', "util.select", "jquery"],
             selectors.unit2,
             function() {
                 fromValue1ToValue2();
+                selectors.value2.focus();
             }
         );
 
@@ -74,6 +76,8 @@ require(['conversion.fn', 'conversion.list', "util.select", "jquery"],
 
             selectors.value1.val(1);
             fromValue1ToValue2();
+
+            selectors.value1.focus();
         };
 
         var conceptSelect = selectWrapper.create(
