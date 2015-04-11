@@ -12,12 +12,12 @@ define(function() {
             {
                 id: 2,
                 name: "Kilogram",
-                conversion: 1000
+                conversion: 0.001
             },
             {
                 id: 3,
                 name: "Gram",
-                conversion: 1000000
+                conversion: 0.000001
             }
         ]
     };

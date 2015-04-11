@@ -1,21 +1,20 @@
-define(['unit.type-checker'], function(typeChecker){
+define(function(){
     'use strict';
     return function (widget, fromUnitId, toUnitId, amount) {
         var units = widget.units,
-            amountInDefaultUnit,
+            amountInMainUnit,
             amountInTargetUnit;
 
-
-        if( units[toUnitId].conversion ) {
-            amountInDefaultUnit = amount * units[toUnitId].conversion;
+        if( units[fromUnitId].conversion ) {
+            amountInMainUnit = amount * units[fromUnitId].conversion;
         } else {
-            amountInDefaultUnit = units[toUnitId].conversionToMainUnit(amount);
+            amountInMainUnit = units[fromUnitId].conversionToMainUnit(amount);
         }
 
-        if( units[fromUnitId].conversion ) {
-            amountInTargetUnit = amountInDefaultUnit / units[fromUnitId].conversion;
+        if( units[toUnitId].conversion ) {
+            amountInTargetUnit = amountInMainUnit / units[toUnitId].conversion;
         } else {
-            amountInTargetUnit = units[fromUnitId].conversionFromMainUnit(amountInDefaultUnit);
+            amountInTargetUnit = units[toUnitId].conversionFromMainUnit(amountInMainUnit);
         }
 
         return amountInTargetUnit;

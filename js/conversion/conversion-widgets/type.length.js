@@ -14,17 +14,17 @@ define(function() {
             {
                 id: 2,
                 name: "Meter",
-                conversionToMainUnit: function(kilometers) {
+                conversionFromMainUnit: function(kilometers) {
                     return kilometers * 1000
                 },
-                conversionFromMainUnit: function(meters) {
+                conversionToMainUnit: function(meters) {
                     return meters / 1000;
                 }
             },
             {
                 id: 3,
                 name: "Centimeter",
-                conversion: 1000000
+                conversion: 0.000001    // From this unit to main
             }
         ]
     };
