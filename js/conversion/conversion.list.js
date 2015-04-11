@@ -1,9 +1,11 @@
 define([
     'conversion-widgets/type.length',
     'conversion-widgets/type.mass',
-], function(typeLength, typeMass) {
+    'conversion-widgets/type.temperature',
+], function(typeLength, typeMass, typeTemperature) {
     return [
         typeLength,
         typeMass,
+        typeTemperature,
     ];
 });
