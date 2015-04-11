@@ -14,12 +14,7 @@ define(function() {
             {
                 id: 2,
                 name: "Meter",
-                conversionFromMainUnit: function(kilometers) {
-                    return kilometers * 1000
-                },
-                conversionToMainUnit: function(meters) {
-                    return meters / 1000;
-                }
+                conversion: 0.001
             },
             {
                 id: 3,
